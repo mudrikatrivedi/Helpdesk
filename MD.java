@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import javax.swing.JOptionPane;
 import java.util.*;
 public class MD{
+/*	
  public static String getMd5(String input) 
     {
         try { 
@@ -32,6 +33,7 @@ public class MD{
             throw new RuntimeException(e); 
         } 
     } 
+*/    
 public static void main(String args[]) throws Exception 
     {     
 Connection con;
