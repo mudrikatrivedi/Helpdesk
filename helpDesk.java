@@ -45,20 +45,22 @@ public class helpDesk{
         pstm = (PreparedStatement) con.prepareStatement("select * from login where EmpID=? and Password=?");
         String e = getMd5(emp);   
         String p = getMd5(pw);		
-	    pstm.setString(1,e);
+	        pstm.setString(1,e);
 		pstm.setString(2, p);
        
         ResultSet rs = pstm.executeQuery();
-	    while(rs.next()){
+	    if(rs!=null){
 		    String emp1 = rs.getString("EmpID");
 		    String pw1 = rs.getString("Password");
 		    if((e.equals(emp1)) && (p.equals(pw1))){
 			    flag = true;
 			    JOptionPane.showMessageDialog(null, "Username and Password exist");
+			    System.out.println("Username and password exist");
 		    }
 		   rs.close();
 		   if(!flag){
 			   JOptionPane.showMessageDialog(null, "Please Check Again");
+			   System.out.println("Please check again");
 		   }
 	   }
 		 
