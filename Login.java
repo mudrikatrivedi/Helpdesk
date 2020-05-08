@@ -23,7 +23,7 @@ public class Login{
             } 
     try{ 
 	    Class.forName("com.mysql.jdbc.Driver").newInstance();
-            con = (Connection) DriverManager.getConnection("","","");
+            con = (Connection) DriverManager.getConnection("");
             prepared_statement = (PreparedStatement) con.prepareStatement("select * from login where EmpID=? and Password=?");		  
 	    prepared_statement.setString(1,empIDTocheck);
 	    prepared_statement.setString(2, pwdinMD5);
